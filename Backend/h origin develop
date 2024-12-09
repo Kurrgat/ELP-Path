@@ -1,0 +1,1312 @@
+[33mcommit 9aa3a469eb774915a8dce252de1e30edf028da50[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;32mnew-latestbranch[m[33m)[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Aug 2 17:24:41 2023 +0300
+
+    wednesday work upto improved image handling, last commit
+
+[33mcommit d92d1ab8c3a14b1eb34fad0872f750ac726c4742[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Aug 2 16:09:30 2023 +0300
+
+    wednesday work upto linking chapters with activities
+
+[33mcommit d16508324a75217e920ae53dbadf357059b331a9[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Aug 2 14:41:37 2023 +0300
+
+    wednesday work upto working multipart update in activity service
+
+[33mcommit 418cd7c84533bc16cdb3cffa1b605901666428b1[m
+Merge: 3369c0e 514dcb3
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Wed Aug 2 08:34:57 2023 +0300
+
+    Merge pull request #50 from emtech2018/ft-security
+    
+    Ft security
+
+[33mcommit 514dcb3c018e7963eac0db17fa1277739acfdf4a[m
+Merge: c646717 717bb41
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Aug 2 08:30:23 2023 +0300
+
+    wednesday morning merge
+
+[33mcommit 717bb41b58b2df399ca73b30baeb07ab23d8c093[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Tue Aug 1 16:34:33 2023 +0300
+
+    tuesday's work upto cancelling event bookings
+
+[33mcommit 3369c0e905779c853b942162b74d9b24c5f82e6c[m
+Merge: af025b9 16a8988
+Author: mbunifu <40456928+mbunifu@users.noreply.github.com>
+Date:   Tue Aug 1 16:23:24 2023 +0300
+
+    Merge pull request #49 from emtech2018/feeds
+    
+    Feeds
+
+[33mcommit 16a8988692d0a7eef21ff45d7de9494fbe7c6784[m
+Merge: 4cc75c6 af025b9
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Tue Aug 1 16:20:24 2023 +0300
+
+    fixed merge conflicts
+
+[33mcommit 4cc75c6301748ea2a1fe2695df98460aa231dc64[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Tue Aug 1 16:13:33 2023 +0300
+
+    added relationship between Chapters and Events
+
+[33mcommit c646717934b942f6dd3af9e9a11bcd494a6bcf4e[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Tue Aug 1 12:24:00 2023 +0300
+
+    fixed merges
+
+[33mcommit af025b9566c8f7e2ef4ded1b0958a6ef785f23da[m
+Merge: 35c483d 9743859
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Tue Aug 1 11:28:45 2023 +0300
+
+    Merge pull request #48 from emtech2018/ft-security
+    
+    updated activity with activity type
+
+[33mcommit 97438591e827bade4858dcaa9b4f77c3cbd449e4[m[33m ([m[1;32mtemp-branch[m[33m)[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Tue Aug 1 11:26:36 2023 +0300
+
+    updated activity with activity type
+
+[33mcommit 35c483dd89eaedf76f2e1fb2d0c9d8c6bfe3e7a0[m
+Merge: c16ef60 cab9d0e
+Author: mbunifu <40456928+mbunifu@users.noreply.github.com>
+Date:   Tue Aug 1 11:23:00 2023 +0300
+
+    Merge pull request #47 from emtech2018/feeds
+    
+    fixed error in feeds Post API
+
+[33mcommit c16ef609e7675a8b9f1c29177a5abd34d412a132[m
+Merge: 7750a06 fc0be8f
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Tue Aug 1 11:20:01 2023 +0300
+
+    Merge pull request #46 from emtech2018/revert-43-ft-security
+    
+    Revert "complete activity CRUD with error handling"
+
+[33mcommit 056f027b81eeb92168d06cdb9f2e2d77578d5729[m
+Merge: cab9d0e 7750a06
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Tue Aug 1 11:14:24 2023 +0300
+
+    Merge branch 'develop' of https://github.com/emtech2018/EMT-ELP-PATH_Solution into feeds
+
+[33mcommit cab9d0e36c15a2cd71b3b1787f44bff98e97d1cb[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Tue Aug 1 11:13:27 2023 +0300
+
+    fixed error in feeds Post API
+
+[33mcommit fc0be8fa124f7cd97b8634ee82cc8e35a899087b[m[33m ([m[1;31morigin/revert-43-ft-security[m[33m)[m
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Tue Aug 1 11:12:47 2023 +0300
+
+    Revert "complete activity CRUD with error handling"
+
+[33mcommit 7750a060284f45c875e8ffdbe24e72c35a5a38a9[m
+Merge: d1697c7 304dd5c
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Tue Aug 1 10:02:44 2023 +0300
+
+    Merge pull request #43 from emtech2018/ft-security
+    
+    complete activity CRUD with error handling
+
+[33mcommit 304dd5ca4a6e5c9fe458ea4bdba763b98e529a34[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Tue Aug 1 09:56:22 2023 +0300
+
+    complete activity CRUD with error handling
+
+[33mcommit d1697c7be8cfd79a25ffa9a1c660b064738c363b[m
+Merge: f6f6f36 355b322
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Tue Aug 1 01:45:40 2023 -0400
+
+    Merge pull request #40 from emtech2018/chapters
+    
+    Implemented Chapters functionality
+
+[33mcommit 355b322f07ed95599c236a884b1355d1e58e1ce3[m[33m ([m[1;31morigin/chapters[m[33m)[m
+Merge: 87de824 3e0bc56
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Tue Aug 1 08:42:46 2023 +0300
+
+    Merged changes
+
+[33mcommit f6f6f363d7f3b15c323a94b777f3f8895a923cd7[m
+Merge: 3e0bc56 8d794e6
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Mon Jul 31 17:08:49 2023 +0300
+
+    Merge pull request #41 from emtech2018/ft-security
+    
+    Ft security
+
+[33mcommit 8d794e69183d2c06f0fb2e0181a56d2c03501e7e[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 31 17:02:19 2023 +0300
+
+    monday's work, upto Activities' CRUD
+
+[33mcommit 87de824b76543eaf8b66db8e46518940fe90d343[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Mon Jul 31 14:44:15 2023 +0300
+
+    Implemented Chapters functionality
+
+[33mcommit 3e0bc5693233ba71ae339f10e4738cac76a254c3[m
+Merge: 0c56923 d700e1b
+Author: mbunifu <40456928+mbunifu@users.noreply.github.com>
+Date:   Mon Jul 31 13:12:29 2023 +0300
+
+    Merge pull request #39 from emtech2018/feeds
+    
+    Feeds
+
+[33mcommit d700e1b004e5067a10a647d548b8f646b3ea25f6[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Mon Jul 31 13:06:06 2023 +0300
+
+    added expenses by year endpoint
+
+[33mcommit 2da16ee323225966b7aeb477287d9372022b8b30[m
+Merge: 8039031 0c56923
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Mon Jul 31 12:58:33 2023 +0300
+
+    fixed merge conflicts
+
+[33mcommit 8039031a97280856d0336890715cfe7cd6f334f0[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Mon Jul 31 12:16:56 2023 +0300
+
+    implemented events with images APIs
+
+[33mcommit 16963e176054bea5e657283742adc089cc4e0166[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 31 12:15:35 2023 +0300
+
+    final changes
+
+[33mcommit 0c569232becf2c1e2db23bb9de1ee0c004264cc5[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 31 11:49:50 2023 +0300
+
+    updated refactoring
+
+[33mcommit e2cf58aa04c96d585c667338ff021cac22e18882[m
+Merge: 161dad6 3c6f232
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 31 11:07:10 2023 +0300
+
+    merging refactored project
+
+[33mcommit 161dad617d536b265a65fa654788aacfb9c4478a[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 31 10:52:42 2023 +0300
+
+    updated upto Activities. Also end-school end point
+
+[33mcommit 3c6f2323c569d952cf4118434f023f1cb0d245cc[m
+Merge: b8ba4ee 138fd67
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Mon Jul 31 10:38:43 2023 +0300
+
+    Made changes to the file structure
+
+[33mcommit 138fd67a7bcdf4a7f12016b2190f8f8f6dd5d346[m[33m ([m[1;31morigin/total-awarded-applications-by-year[m[33m)[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Mon Jul 31 09:19:56 2023 +0300
+
+    Made changes to the file structure
+
+[33mcommit b8ba4eec3f6475c72dcaef51784caf76ad6b6f3f[m
+Merge: 1e68f72 00a07df
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Fri Jul 28 17:08:49 2023 +0300
+
+    Merge pull request #36 from emtech2018/ft-security
+    
+    Ft security
+
+[33mcommit 00a07df259acdf6f5864709d6b9233c6795590b5[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Fri Jul 28 17:04:05 2023 +0300
+
+    friday's work upto improved interschool transfers. Includes updated one to many relation
+
+[33mcommit 444f9d609c539060486460cf5fa2968c8a69bf86[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Fri Jul 28 10:42:20 2023 +0300
+
+    resolved? maybe
+
+[33mcommit 1e68f72dd3c384f5bd0ec38f05561fab97f99a7d[m
+Merge: 2b5d316 97d892d
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Fri Jul 28 10:08:06 2023 +0300
+
+    Merge pull request #35 from emtech2018/ft-security
+    
+    Ft security
+
+[33mcommit 97d892d20749b89bc973f774facf4f1b02747168[m
+Merge: 85c54b0 2b5d316
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Fri Jul 28 10:07:18 2023 +0300
+
+    Merge branch 'develop' into ft-security
+
+[33mcommit 85c54b0cb53e0225a72bc7cca245eba7a09bc19d[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Fri Jul 28 09:58:48 2023 +0300
+
+    accommpdating Tracy's Work
+
+[33mcommit 2b5d3163914bd72d7df91e520a50e576f193af4e[m
+Merge: 973665a da7835c
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Fri Jul 28 02:46:24 2023 -0400
+
+    Merge pull request #34 from emtech2018/total-awarded-applications-by-year
+    
+    Implemented end point for total awarded applications by year
+
+[33mcommit da7835ca0f1db69f637e9fd8968497d42c2a895b[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Fri Jul 28 08:57:16 2023 +0300
+
+    Implemented end point for total awarded applications by year
+
+[33mcommit 5c39fae8377e73e9c243314a0dc642cfe2d6189e[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Thu Jul 27 16:28:31 2023 +0300
+
+    fixed error on get images endpoint
+
+[33mcommit 7b44b464c52de222c2e4de809ae71cd7cd94a8f2[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Thu Jul 27 11:40:08 2023 +0300
+
+    upto getting school by application id
+
+[33mcommit 973665a4b24811fab734e2ff76ef153b3ec759ec[m
+Merge: 21a87a8 f52c6e3
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Thu Jul 27 08:47:56 2023 +0300
+
+    Merge pull request #33 from emtech2018/ft-security
+    
+    accommodating nicholas' changes
+
+[33mcommit f52c6e30b7e36bca369b039ad36b335576711ab1[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Thu Jul 27 08:43:23 2023 +0300
+
+    accommodating nicholas' changes
+
+[33mcommit 21a87a8dff5cf5f1660878806e2c609f91fd78d8[m
+Merge: 24c799a e965aa4
+Author: mbunifu <40456928+mbunifu@users.noreply.github.com>
+Date:   Thu Jul 27 08:42:29 2023 +0300
+
+    Merge pull request #32 from emtech2018/feeds
+    
+    fixed error in total expenses endpoint
+
+[33mcommit 54c477d66093db381c860398050054f80f0f8524[m
+Merge: e965aa4 24c799a
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Thu Jul 27 08:37:41 2023 +0300
+
+    Merge branch 'develop' of https://github.com/emtech2018/EMT-ELP-PATH_Solution into feeds
+
+[33mcommit e965aa482d09b11d0c36d6ce4966e96191932b36[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Thu Jul 27 08:36:35 2023 +0300
+
+    fixed error in total expenses endpoint
+
+[33mcommit 24c799af909c47ef09e40ae6c7677746bc5e921f[m
+Merge: 654f7dd da9633e
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Wed Jul 26 16:29:58 2023 +0300
+
+    Merge pull request #31 from emtech2018/ft-security
+    
+    wednesday work upto JsonPropertHibernateInitializer Issue
+
+[33mcommit da9633e5d621ac44aef43463eebd100fa49864a9[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Jul 26 16:21:32 2023 +0300
+
+    wednesday work upto JsonPropertHibernateInitializer Issue
+
+[33mcommit 654f7dd37e3425cbb52eb5f655ad663547926021[m
+Merge: 6808a4e 2f11161
+Author: mbunifu <40456928+mbunifu@users.noreply.github.com>
+Date:   Wed Jul 26 16:18:07 2023 +0300
+
+    Merge pull request #30 from emtech2018/feeds
+    
+    Feeds
+
+[33mcommit 2f1116112014c5ed7696aeacc1afbdca84233bfc[m
+Merge: 89a487e 6808a4e
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Wed Jul 26 16:15:17 2023 +0300
+
+    fixed merge errors
+
+[33mcommit 89a487eb8bc455ef907c23c4a8c2e8c3fdb375b6[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Wed Jul 26 16:03:07 2023 +0300
+
+    added expenses by year endpoint
+
+[33mcommit a51fd253b0ae07421f48b8297f5fc85fccd5d789[m
+Merge: f5a4237 885222f
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Wed Jul 26 14:16:02 2023 +0300
+
+    fixed merge conflicts
+
+[33mcommit 6808a4efa2e3d02912e33b25d60c393949973d61[m
+Merge: 885222f d5bda35
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Wed Jul 26 12:40:45 2023 +0300
+
+    Merge pull request #29 from emtech2018/ft-security
+    
+    solving stack overflow issue
+
+[33mcommit f5a42378b3194900c34696db8249df42ea79a7e1[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Wed Jul 26 12:36:19 2023 +0300
+
+    fixed errors in events endpoints
+
+[33mcommit d5bda3573b08a179e5ec374a1d15c35853f35ee4[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Jul 26 12:33:09 2023 +0300
+
+    solving stack overflow issue
+
+[33mcommit 885222f388a0930835a0626e4288998d3e0c90e1[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Wed Jul 26 11:58:47 2023 +0300
+
+    Modified end point to get total applications per year
+
+[33mcommit 2ce7924523b2858d6f95a423a79567cc8f267808[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Wed Jul 26 08:33:46 2023 +0300
+
+    Modified end point to get total applications per year
+
+[33mcommit ead935efdc6d78e64dd539fa4c3425107c21d975[m
+Merge: 6e35793 8db1a29
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Tue Jul 25 17:08:54 2023 +0300
+
+    Merge pull request #28 from emtech2018/ft-security
+    
+    Tuesdays work upto tallying the registered users
+
+[33mcommit 8db1a297d17358d0c3b8486f4a4d806f8fa2daa1[m
+Merge: 106a41c 6e35793
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Tue Jul 25 17:08:35 2023 +0300
+
+    Merge branch 'develop' into ft-security
+
+[33mcommit 6e35793683b47010c63b3123474e1bc05b07330b[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Tue Jul 25 17:06:23 2023 +0300
+
+    Modified end point to get total applications per year
+
+[33mcommit 106a41c70eb36e4384615f259e14d6a7ad4413b9[m
+Merge: 1e91f7c 6457ea3
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Tue Jul 25 17:06:04 2023 +0300
+
+    Merge branch 'develop' into ft-security
+
+[33mcommit 6457ea33ac0ee686a090fdaf5bc43bf10fb1f90e[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Tue Jul 25 16:26:07 2023 +0300
+
+    Implemented end point to get total applications per year
+
+[33mcommit 1e91f7cf3e20faa6e9b0251381a4669bb367aeef[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Tue Jul 25 16:17:27 2023 +0300
+
+    Tuesdays work upto tallying the registered users
+
+[33mcommit 42111b1200f20eac6072b128cbf1e269d5235fc4[m
+Merge: db2b8cd 968c80c
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Mon Jul 24 17:02:51 2023 +0300
+
+    Merge pull request #25 from emtech2018/ft-security
+    
+    monday's work upto application_school_mapping
+
+[33mcommit 968c80c31eec843c1c9dcda0290408d348c8460e[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 24 16:56:05 2023 +0300
+
+    monday's work upto application_school_mapping
+
+[33mcommit db2b8cdf08bb72a4bc8f86760de7e5d9ce8ca643[m
+Merge: 1bc4b04 03f6a2d
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Mon Jul 24 14:37:57 2023 +0300
+
+    Implemented exception handling
+
+[33mcommit 03f6a2d00e4d3e57dd3103faf8b9c62f2cb1ea7c[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 24 12:43:07 2023 +0300
+
+    totals per Term and gross totals
+
+[33mcommit 1bc4b04a6b48030150554b4cc99fda423fd11455[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Mon Jul 24 12:20:06 2023 +0300
+
+    Implemented exception handling
+
+[33mcommit 08c77cdec2b146674d9986d38d93e8f1cea1bd6a[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Jul 19 17:00:11 2023 +0300
+
+    intro to less typing: classes branch and school
+
+[33mcommit 323712d27a7e6de068780bd4a005fc200e04f087[m
+Merge: 9d4c471 cf4dc49
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Wed Jul 19 08:54:56 2023 +0300
+
+    Adding scholar files
+
+[33mcommit 9d4c4716c296dde98a53bcbc651fc4829e2b1fa7[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Wed Jul 19 08:36:30 2023 +0300
+
+    Adding changes to some scholar files
+
+[33mcommit cf4dc492d88f9ca1bceb3aa649138435d7400ac8[m
+Merge: bfd94c1 bcb8bae
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Wed Jul 19 08:32:42 2023 +0300
+
+    Merge pull request #23 from emtech2018/ft-security
+    
+    Applications, interviews and default role
+
+[33mcommit bfd94c119ceb364d2ce6d385515b85e3da162fb5[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Jul 19 08:27:42 2023 +0300
+
+    latest working version
+
+[33mcommit 2b9ce5f7a2744dccb8e7ccefff4f8252657892e4[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 17 14:30:41 2023 +0300
+
+    Latest version
+
+[33mcommit bcb8bae1df39f5121fb28ec2508e0323be8e40b7[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 17 11:35:16 2023 +0300
+
+    Fridays work
+
+[33mcommit ff56d72eea7a50c6f5b28b1869b9741bc85463fc[m
+Merge: bf56ee9 7f7061d
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Sun Jul 16 23:26:11 2023 +0300
+
+    Merge branch 'develop' into ft-security
+
+[33mcommit 7f7061d262a9946f3aef4d9b47b4ad042a88c24a[m[33m ([m[1;31morigin/ft-security-clean[m[33m)[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Sun Jul 16 20:36:07 2023 +0300
+
+    Application and Interviews
+
+[33mcommit bf56ee9620476eeea615f79cb5b75d5d581b6100[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Fri Jul 14 16:54:04 2023 +0300
+
+    Applications, interviews and default role
+
+[33mcommit 4cd35ec9b5ac4a20d2df5ecc50df305a5d781deb[m
+Merge: d70f650 cc89fef
+Author: mbunifu <40456928+mbunifu@users.noreply.github.com>
+Date:   Fri Jul 14 16:43:50 2023 +0300
+
+    Merge pull request #21 from emtech2018/feeds
+    
+    Feeds
+
+[33mcommit cc89feff61cd647a463ba47e60bf27fdfda230c6[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Fri Jul 14 15:24:53 2023 +0300
+
+    fixed errors in events APIs
+
+[33mcommit 8a03fad43be1936ec503840dfb22872c84dd5992[m
+Merge: 3dda01b d70f650
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Thu Jul 13 15:50:11 2023 +0300
+
+    Merge branch 'develop' of https://github.com/emtech2018/EMT-ELP-PATH_Solution into feeds
+
+[33mcommit 3dda01b110969d7e8f233d886ff5dfdba96d5485[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Thu Jul 13 15:49:12 2023 +0300
+
+    fixed merge conflicts
+
+[33mcommit d70f6503458754d7b1fb35ec5635d71b6141ce6d[m
+Merge: a91f7ae a0872b4
+Author: Melody Chepkorir <melodytowett99@gmail.com>
+Date:   Thu Jul 13 15:39:27 2023 +0300
+
+    Merge pull request #20 from emtech2018/ft-profile
+    
+    posting feeds and scholar expenses
+
+[33mcommit a0872b480921ae7dcae09feb162d43e5cd2abf5d[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 13 15:37:25 2023 +0300
+
+    trying method to post more multiple images
+
+[33mcommit 58cd9bf06ec2e9a74c5ab67e8e8b824a21216acb[m
+Merge: d0b0583 a91f7ae
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 13 14:19:38 2023 +0300
+
+    modify method to add feeds and images using one api
+
+[33mcommit d0b0583ee315179d6c436f69d1650333349caac3[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 13 13:05:09 2023 +0300
+
+    modification based on frontedn requirements
+
+[33mcommit a91f7ae7bfce1d23a8439bb4e55102c572485149[m[33m ([m[1;31morigin/scholars[m[33m)[m
+Merge: 2ce7d44 ef962aa
+Author: mbunifu <40456928+mbunifu@users.noreply.github.com>
+Date:   Thu Jul 13 12:22:02 2023 +0300
+
+    Merge pull request #19 from emtech2018/feeds
+    
+    Feeds
+
+[33mcommit ef962aa30bf07bc6cb4a1dc23f76047d3426e4fc[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Thu Jul 13 12:19:11 2023 +0300
+
+    fixed merge conflicts
+
+[33mcommit 9a89afc96cfd8deba836bba42940d3813c0894c7[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Thu Jul 13 12:16:19 2023 +0300
+
+    fixed merge conflicts
+
+[33mcommit e8013e4a3c4e30ffffb485e8c65349a6233c33b0[m
+Merge: 4b159da 2ce7d44
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Thu Jul 13 12:10:00 2023 +0300
+
+    fixed merge conflicts
+
+[33mcommit 4b159da8b88d2b5245d01de0de60f666ef62ca6d[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Thu Jul 13 12:01:09 2023 +0300
+
+    optimized feeds APIs
+
+[33mcommit 2ce7d44dfbe0dba6030df0c08c8a99695eee3f6b[m
+Merge: dd2336c 1a1182a
+Author: Melody Chepkorir <melodytowett99@gmail.com>
+Date:   Thu Jul 13 10:13:29 2023 +0300
+
+    Merge pull request #18 from emtech2018/ft-profile
+    
+    Ft profile
+
+[33mcommit 1a1182abad2560c628d148d4c6d0d382453659f4[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 13 10:09:49 2023 +0300
+
+    merging with the develp
+
+[33mcommit 3538a54f52277b6e9776c64c372509878788c7ec[m
+Merge: 1c77c54 dd2336c
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 13 09:52:40 2023 +0300
+
+    add method to calculate scholar expenses per term
+
+[33mcommit 1c77c54bca8734c0e029b0ef4fe281b0713b436b[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 13 09:51:46 2023 +0300
+
+    add method to calculate scholar expenses per term
+
+[33mcommit ecf44d87bf9990fc8756fae3aaf356a8ffa259a7[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 13 09:37:30 2023 +0300
+
+    add method to calculate scholar expenses per term
+
+[33mcommit dd2336c72afce2317f23c604915aa22abed01033[m
+Merge: dd7e47e 0281339
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Thu Jul 13 09:29:31 2023 +0300
+
+    fixed profile and education conflicts
+
+[33mcommit 02813393d82bcf4d6070ba7a5b80c793e2af2c6b[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Thu Jul 13 08:55:05 2023 +0300
+
+    fixed profile and education conflicts
+
+[33mcommit 6c3ee2a971db8cf771d0112872eccd479473272c[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Thu Jul 13 08:01:49 2023 +0300
+
+    Application CRUD, PDFs CRUD
+
+[33mcommit 0ce8aae45bc29dc90bba3446382667a915cef499[m
+Merge: 05e53d9 60e26ad
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Jul 12 20:48:01 2023 +0300
+
+    Merge remote-tracking branch 'origin/ft-security' into ft-security
+    
+    # Conflicts:
+    #       pom.xml
+    #       src/main/java/com/example/emtechelppathbackend/EmtElpPathBackendApplication.java
+    #       src/main/java/com/example/emtechelppathbackend/security/config/SecurityConfiguration.java
+    #       src/main/java/com/example/emtechelppathbackend/security/entities/Users.java
+    #       src/main/java/com/example/emtechelppathbackend/security/repositories/UserRepository.java
+    #       src/main/resources/application.properties
+
+[33mcommit 05e53d9353154d7a3b9fb41caa110c0893d7adbf[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Tue Jul 11 16:46:47 2023 +0300
+
+    Application CRUD, PDFs CRUD
+
+[33mcommit cc7321a283f591d445e4de02a2e4527affa35c2a[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 10 08:50:57 2023 +0300
+
+    polished authorization, CRUD operations on  application and applicationPDFS
+
+[33mcommit 79c9dffdaab46dd11e8ff34ad323bf42d5d2ab0a[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Fri Jul 7 21:12:49 2023 +0300
+
+    polished authorization, CRUD operations on  application and applicationPDFS
+
+[33mcommit f9ad4419e2d4ca39fd539868aad82a3540dadb17[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Jul 5 11:16:10 2023 +0300
+
+    merge
+
+[33mcommit f11981077496ae78e3dc9e86b11a3f52464fc215[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Wed Jul 5 09:57:08 2023 +0300
+
+    end point to add social media links to profile
+
+[33mcommit f578e2559fe2d22185f65be3b12e9e65afcff62b[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jul 4 17:00:36 2023 +0300
+
+    end point to add social media links to profile
+
+[33mcommit b1ab958c595685129587b6f589cb18ec9afdbc16[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jul 4 16:26:15 2023 +0300
+
+    end point to view all users
+
+[33mcommit 2602770b51d1af3ea06bef2066aa09b11c686de5[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 3 17:02:51 2023 +0300
+
+    enable cors origin spring security
+
+[33mcommit 1ec36c0e175f99edfcebcb15c94483f123ed8a93[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 3 16:58:17 2023 +0300
+
+    enable corin spring security
+
+[33mcommit 8b4a11272e2fb7a57a41364c5145b4ee7ecdf023[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 3 13:04:59 2023 +0300
+
+    add swagger openapi
+
+[33mcommit 4a993a08013783074793854b31ed90dfaf8f9b7e[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 3 10:49:47 2023 +0300
+
+    add methods to update user profile
+
+[33mcommit e2b708dc9c8b999d7578e615da0ae3ccd8fea5a6[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 30 16:41:33 2023 +0300
+
+    add method to update education
+
+[33mcommit f81517bed6bcf80fd6cd2db54e01acb94b5668c3[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 30 15:46:57 2023 +0300
+
+    add method to update career
+
+[33mcommit 99a057906624d231b6eea54a5dafd67ad79ee2c9[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 30 09:58:25 2023 +0300
+
+    add image to profile as base64
+
+[33mcommit d6166421963c4f8f738c9e41260bb58f1ae7c63b[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jun 29 11:20:58 2023 +0300
+
+    add all methods to create user profile by id
+
+[33mcommit 97795cd8b86dce18029bdc0bf16d33903e125d7e[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jun 27 15:35:19 2023 +0300
+
+    add user profile by user id
+
+[33mcommit 09de3936a8773adda8bb58c86dae67af62cd3668[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jun 27 11:05:01 2023 +0300
+
+    add profile controller
+
+[33mcommit a22cd61f02f0dcadad5093b85d4ba5c2329a0b34[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 23 16:30:27 2023 +0300
+
+    add emthods to create profile
+
+[33mcommit 4bfcb2aa08fcd0635a052fc05225617ec40196f8[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 23 11:18:48 2023 +0300
+
+    created model
+
+[33mcommit 6cd42a2e235b1758d91445d8c3116b411c04f4d3[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Wed Jul 12 15:31:28 2023 +0300
+
+    adding image upload implementation
+
+[33mcommit dd7e47e58336f7fb15c7d69901eb12ead7bbe8ae[m
+Merge: 7919a77 39b1716
+Author: Melody Chepkorir <melodytowett99@gmail.com>
+Date:   Wed Jul 12 14:07:43 2023 +0300
+
+    Merge pull request #17 from emtech2018/ft-profile
+    
+    Scholar education and expense tracking
+
+[33mcommit 39b1716609b7c0c7982aa18662e9aadafb620ef2[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Wed Jul 12 13:03:17 2023 +0300
+
+    add method to calculate scholar expenses per term
+
+[33mcommit ffc20c597168f4592598d9b34d052765e531832f[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Wed Jul 12 12:22:01 2023 +0300
+
+    add method to add scholar education and expenses
+
+[33mcommit c14e7940624995edcee449467db03751b0337541[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Jul 5 09:48:19 2023 +0300
+
+    improved security and mailing
+
+[33mcommit 60e26ad8b855fd6ad48bbcdc220e46b8c11ed8a6[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Tue Jul 11 16:46:47 2023 +0300
+
+    Application CRUD, PDFs CRUD
+
+[33mcommit f87d47cf12861b5e71dc328ad150cfb71e71c13e[m
+Merge: 873165a 7919a77
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jul 11 16:02:06 2023 +0300
+
+    fix conflicts
+
+[33mcommit 7919a772d9820015898cec226251bd4ef1f7f8a5[m
+Merge: 9a4d4b7 78938a7
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Tue Jul 11 08:47:27 2023 -0400
+
+    Merge pull request #15 from emtech2018/scholars
+    
+    Added Scholar functionality
+
+[33mcommit 78938a7d71dd3eee46b338fc4c646f3716c8c2fe[m
+Merge: 4fa19e6 9a4d4b7
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Tue Jul 11 15:46:18 2023 +0300
+
+    added Scholar functionality
+
+[33mcommit 4fa19e63f25a8e700719092c4edec9edf3d562b8[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Tue Jul 11 15:42:38 2023 +0300
+
+    added Scholar functionality
+
+[33mcommit 9a4d4b779af0210c940bea0001a4a88b6bc5ea35[m
+Merge: f51b673 3bd037a
+Author: mbunifu <40456928+mbunifu@users.noreply.github.com>
+Date:   Tue Jul 11 15:01:02 2023 +0300
+
+    Merge pull request #14 from emtech2018/feeds
+    
+    fix APIs on feeds
+
+[33mcommit 3bd037a574503a4f8c5f4873038de928b56ee801[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Tue Jul 11 14:52:10 2023 +0300
+
+    fix APIs on feeds
+
+[33mcommit 873165ac3ea98cbc6ae6b61a17de5ab30ffe2966[m
+Merge: 932ffc8 f51b673
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jul 11 14:36:35 2023 +0300
+
+    fix conflicts
+
+[33mcommit 932ffc8e8fae700f6fc4f2ee6dbbe65d939bd617[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jul 11 14:28:24 2023 +0300
+
+    fix conflicts
+
+[33mcommit f51b6739d7355aac1bcdb417b3a5acff26207f35[m
+Merge: 6c50396 fc0dabc
+Author: mbunifu <40456928+mbunifu@users.noreply.github.com>
+Date:   Tue Jul 11 13:49:33 2023 +0300
+
+    Merge pull request #13 from emtech2018/feeds
+    
+    Feeds
+
+[33mcommit fc0dabc6240f0757de4db2724635775bfceab508[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Tue Jul 11 13:41:01 2023 +0300
+
+    fix merge conflicts
+
+[33mcommit 28d5985b6172d262910eb5c414899a1a23124efd[m
+Merge: 5cd9782 6c50396
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Tue Jul 11 13:14:49 2023 +0300
+
+    fix merge conflicts
+
+[33mcommit 5cd97825152d8c3638164da88288794949b6cd54[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Tue Jul 11 12:56:10 2023 +0300
+
+    implemented feeds APIs
+
+[33mcommit 2f7def1f7c581486056e8bed1bfa23b60fa5b142[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Tue Jul 11 12:34:23 2023 +0300
+
+    implemented feeds APIs
+
+[33mcommit 6c50396444c8d49c6950e4c6723123c3b9f07f5a[m
+Merge: b427a21 a778498
+Author: Melody Chepkorir <melodytowett99@gmail.com>
+Date:   Tue Jul 11 11:59:17 2023 +0300
+
+    Merge pull request #12 from emtech2018/ft-profile
+    
+    Ft profile
+
+[33mcommit a7784983b744d2dad6750df53c233e16e44b0ca3[m
+Merge: 83e1e27 b427a21
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jul 11 11:58:10 2023 +0300
+
+    fix conflicts
+
+[33mcommit 83e1e27d9cc504aaf837887b86eb6ef90db186f8[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jul 11 11:42:15 2023 +0300
+
+    add method to update profile and social by user id
+
+[33mcommit 66a0c22bbb50c15218c89bd629a509005b170b53[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jul 11 11:20:00 2023 +0300
+
+    add method to update profile and social by user id
+
+[33mcommit a3410893ffdaa2e19074ec6b33391ca3ffc28065[m
+Author: mbunifu <murimi.nicko@gmail.com>
+Date:   Tue Jul 11 09:46:17 2023 +0300
+
+    added Feeds implementation
+
+[33mcommit c19d4d59ee83d99ea196206bb1cfd8a5648d0e06[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 10 17:13:55 2023 +0300
+
+    method to uplod social media
+
+[33mcommit b427a219bf5a913f1579bb798e5e4d085e648107[m
+Merge: 204e057 7b60161
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Mon Jul 10 09:06:30 2023 -0400
+
+    Merge pull request #11 from emtech2018/scholars
+    
+    Implemented scholars functionality
+
+[33mcommit 7b601615e963fae4313ff3f111468fd2d0d5e4b4[m
+Merge: 8a4c6fc 204e057
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Mon Jul 10 16:04:50 2023 +0300
+
+    merge conflicts
+
+[33mcommit 8a4c6fcc0e6977267f1111e8baf3dc78ae94c9b6[m
+Author: Tracy Kwena <54999162+Tkwenan@users.noreply.github.com>
+Date:   Mon Jul 10 14:30:27 2023 +0300
+
+    Implemented Scholars functionality
+
+[33mcommit 204e0571ace3741104a9324fa7d500d2b377ad0b[m
+Merge: 11c8277 ab1bcc9
+Author: Melody Chepkorir <melodytowett99@gmail.com>
+Date:   Mon Jul 10 14:04:01 2023 +0300
+
+    Merge pull request #10 from emtech2018/ft-profile
+    
+    Ft profile
+
+[33mcommit ab1bcc90569c084eba567bc73b3969b6e2163a26[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 10 14:02:25 2023 +0300
+
+    end point to add and view feeds
+
+[33mcommit d4a964ca17715fe0b4b1f61da9d85ccb4a7170f5[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 10 10:24:37 2023 +0300
+
+    add method to allow user post a large image
+
+[33mcommit f6b5ea70fc1e06a88ef77ca6660d152ab7c82895[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Mon Jul 10 08:50:57 2023 +0300
+
+    polished authorization, CRUD operations on  application and applicationPDFS
+
+[33mcommit 73ed571091f41050fd6b1e6e0548a26a4ed6e1ed[m
+Merge: 6af8a5a 382e2a4
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Fri Jul 7 21:18:30 2023 +0300
+
+    Merge pull request #8 from emtech2018/ft-security
+    
+    Ft security
+
+[33mcommit 382e2a40029e27adb0490709ed010e814c00f458[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Fri Jul 7 21:12:49 2023 +0300
+
+    polished authorization, CRUD operations on  application and applicationPDFS
+
+[33mcommit 11c8277506b79bb433271a81a689e1be029144fd[m
+Merge: 870fece eb1209f
+Author: Melody Chepkorir <melodytowett99@gmail.com>
+Date:   Fri Jul 7 15:00:57 2023 +0300
+
+    Merge pull request #7 from emtech2018/ft-profile
+    
+    Added exception handling and a method to allow user join or leave a hub
+
+[33mcommit eb1209f76849be477df1a182e1b42f461264c585[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jul 7 14:44:30 2023 +0300
+
+    Add exception handling
+
+[33mcommit 9f8449c2495a46521237c079c3c29398fa83e1e6[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jul 7 12:57:57 2023 +0300
+
+    add method to allow user join or leave an hub
+
+[33mcommit 80a8888a19231700aa0ae29a903dda65c7a1883f[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jul 7 10:06:52 2023 +0300
+
+    update image and socila media method
+
+[33mcommit 079de3bca2292bc941e1d8c8e3aed7bc18ace6f1[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 6 16:22:20 2023 +0300
+
+    add changes of the modified file
+
+[33mcommit ed229bec61cbd3c83799985b271466339b40a807[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 6 08:30:24 2023 +0300
+
+    solve service package errors
+
+[33mcommit 7e1ec9a221edee86e4828480090e421fc485db63[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 6 08:25:45 2023 +0300
+
+    solve service package errors
+
+[33mcommit 600aac71f79677908e65590982e8c278b23540db[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jul 6 08:04:23 2023 +0300
+
+    add changes
+
+[33mcommit 3338754d123bed5d93da534cf73cc0cf313738d2[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Wed Jul 5 14:11:51 2023 +0300
+
+    return user response details when loging in
+
+[33mcommit e216f8d4c8609113994e22988b860f07bbfd2c33[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Jul 5 11:16:10 2023 +0300
+
+    merge
+
+[33mcommit 870fece56d126bebe68264433d228545f5a31ded[m
+Merge: 9309d64 c2fc66e
+Author: Melody Chepkorir <melodytowett99@gmail.com>
+Date:   Wed Jul 5 11:13:09 2023 +0300
+
+    Merge pull request #6 from emtech2018/ft-profile
+    
+    fix merge conflicts
+
+[33mcommit c2fc66e00e782dc1649c07ec0e27ce027a89c257[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Wed Jul 5 11:11:44 2023 +0300
+
+    fix merge conflicts
+
+[33mcommit 9309d6470aa96e316c1a508257ccd4b56def0267[m
+Merge: 4f41c12 9ea8589
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Wed Jul 5 10:07:33 2023 +0300
+
+    Merge pull request #4 from emtech2018/ft-security
+    
+    improved security and mailing
+
+[33mcommit 9ea8589c18b329694c23ac1082f986292cb5bfb0[m
+Merge: 94e773a 4f41c12
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Wed Jul 5 10:07:17 2023 +0300
+
+    Merge branch 'develop' into ft-security
+
+[33mcommit 4f41c128ee19074769a09329e294284b216d505e[m
+Merge: 47852fe 1990bb8
+Author: Melody Chepkorir <melodytowett99@gmail.com>
+Date:   Wed Jul 5 10:00:34 2023 +0300
+
+    Merge pull request #5 from emtech2018/ft-profile
+    
+    complete user profile
+
+[33mcommit 1990bb8ef170742c295de91cb5ca3cd13f87ee4f[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Wed Jul 5 09:57:08 2023 +0300
+
+    end point to add social media links to profile
+
+[33mcommit 94e773ac646456ad2ede7b8c0739708dea44ee3e[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Wed Jul 5 09:48:19 2023 +0300
+
+    improved security and mailing
+
+[33mcommit d3a750618c544ca327b55f0a3aecd95a53f13230[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jul 4 17:00:36 2023 +0300
+
+    end point to add social media links to profile
+
+[33mcommit 5c71157c5fbe1f4bfe95244333961d4ab8ad81b8[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jul 4 16:26:15 2023 +0300
+
+    end point to view all users
+
+[33mcommit c2e95b95120ee0c276d1806b8100e2d64728df8d[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 3 17:02:51 2023 +0300
+
+    enable cors origin spring security
+
+[33mcommit f4f5827cb00e391b593307e63c40729a8a503539[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 3 16:58:17 2023 +0300
+
+    enable corin spring security
+
+[33mcommit 7a709c307802d7a9768498a08a30ccb767306d92[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 3 13:04:59 2023 +0300
+
+    add swagger openapi
+
+[33mcommit 90d75a0ef2f1c05a0feeb0a2194349ca306bf7e3[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Mon Jul 3 10:49:47 2023 +0300
+
+    add methods to update user profile
+
+[33mcommit aa0d3a90f3d8107ccfa74a3458c76929eb56952d[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 30 16:41:33 2023 +0300
+
+    add method to update education
+
+[33mcommit 9563e9d43ced1be328d708849549ef93e6df361c[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 30 15:46:57 2023 +0300
+
+    add method to update career
+
+[33mcommit 47852feabc22365fd1507cd74bca1382c42312c8[m
+Merge: e857450 84f46d3
+Author: Melody Chepkorir <melodytowett99@gmail.com>
+Date:   Fri Jun 30 10:10:44 2023 +0300
+
+    Merge pull request #3 from emtech2018/ft-profile
+    
+    Create user profile details.
+
+[33mcommit 84f46d3345bd5f7ed3a269631367927b65eed769[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 30 09:58:25 2023 +0300
+
+    add image to profile as base64
+
+[33mcommit c19ae5edf749e3b787aa849c5f53f210d8f1a3c2[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Thu Jun 29 11:20:58 2023 +0300
+
+    add all methods to create user profile by id
+
+[33mcommit 6af8a5af04bafc72c844bdfb0fa4fa14c23bab58[m
+Merge: a5e845b e857450
+Author: Edwin Mayieka <42701574+Edwin-Mayieka@users.noreply.github.com>
+Date:   Tue Jun 27 16:42:59 2023 +0300
+
+    Merge pull request #2 from emtech2018/develop
+    
+    Develop
+
+[33mcommit 30749c94b9dc4b8fb4f9dddaa50654ae961c5b0b[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jun 27 15:35:19 2023 +0300
+
+    add user profile by user id
+
+[33mcommit cbc6ea2b6968479f456caec6d7e2a4fc649a7aab[m
+Merge: 46a0dda e857450
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jun 27 12:18:25 2023 +0300
+
+    authenticate alumni
+
+[33mcommit 46a0ddad51085481cc7f2c1c72a3ff122b771337[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Tue Jun 27 11:05:01 2023 +0300
+
+    add profile controller
+
+[33mcommit e857450f3c57ad2fc846517516eb4eec82fce170[m
+Merge: a5e845b 9e8535d
+Author: kariukikihoro <108723435+kariukikihoro@users.noreply.github.com>
+Date:   Tue Jun 27 11:03:45 2023 +0300
+
+    Merge pull request #1 from emtech2018/ft-security
+    
+    authenticate alumni
+
+[33mcommit 9e8535deefa4f610a9db0bab0232d32141c97f15[m
+Author: kariukikihoro <denniskihoro312@gmail.com>
+Date:   Tue Jun 27 10:58:03 2023 +0300
+
+    authenticate alumni
+
+[33mcommit 76f94a69244a47cb8e8097dcf0855d23e807278a[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 23 16:30:27 2023 +0300
+
+    add emthods to create profile
+
+[33mcommit 02acfa31ab79421692fd54e7c3bf9a3ebd6ce3ca[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 23 11:18:48 2023 +0300
+
+    created model
+
+[33mcommit a5e845b091706ddc1df70d653d71464406a8b31b[m[33m ([m[1;32mmaster[m[33m)[m
+Author: melodytowett <melodytowett99@gmail.com>
+Date:   Fri Jun 23 08:52:51 2023 +0300
+
+    setting up the project
