@@ -8,6 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "engines": {
+    "node": "18.x"                         // Specify Node.js 18.x runtime
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.7",
