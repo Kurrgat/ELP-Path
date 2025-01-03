@@ -1,7 +1,8 @@
 
 FROM node:18 AS build
+RUN npm install -g npm@11.0.0
 
-RUN apt-get update && apt-get install -y npm
+#RUN apt-get update && apt-get install -y npm
 
 WORKDIR /app
 
