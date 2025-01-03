@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1" # Adjust to your AWS region
+  region = var.aws_region
 }
 
 # VPC and Networking
@@ -7,13 +7,11 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.19.0"
 
-  name = "ecs-vpc"
-  cidr = "10.0.0.0/16"
-
-  azs             = ["us-east-1a", "us-east-1b"]
-  public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
-  private_subnets = ["10.0.3.0/24", "10.0.4.0/24"]
-
+  name             = "ecs-vpc"
+  cidr             = var.vpc_cidr
+  azs              = ["${var.aws_region}a", "${var.aws_region}b"]
+  public_subnets   = var.public_subnets
+  private_subnets  = var.private_subnets
   enable_nat_gateway = true
 }
 
@@ -23,92 +21,95 @@ resource "aws_security_group" "ecs_sg" {
   vpc_id      = module.vpc.vpc_id
 
   ingress {
-    description      = "Allow HTTP traffic"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
-    description      = "Allow HTTPS traffic"
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
-    description      = "Allow backend traffic"
-    from_port        = 8080
-    to_port          = 8080
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
-    description      = "Allow all outbound traffic"
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
 # ECS Cluster
 resource "aws_ecs_cluster" "ecs_cluster" {
-  name = "ELP-Path-cluster"
+  name = var.ecs_cluster_name
 }
 
-# Task Definition for Frontend
+# ECR Repositories
+resource "aws_ecr_repository" "frontend_repo" {
+  name = var.frontend_repo_name
+}
+
+resource "aws_ecr_repository" "backend_repo" {
+  name = var.backend_repo_name
+}
+
+# Frontend Task Definition
 resource "aws_ecs_task_definition" "frontend_task" {
-  family                   = "angular-frontend-task"
+  family                   = var.frontend_task_family
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = "256"
-  memory                   = "512"
+  cpu                      = var.frontend_cpu
+  memory                   = var.frontend_memory
 
   container_definitions = jsonencode([
     {
       name      = "angular-frontend"
-      image     = "<aws_account_id>.dkr.ecr.us-east-1.amazonaws.com/angular-app:latest"
+      image     = "${aws_ecr_repository.frontend_repo.repository_url}:latest"
       essential = true
       portMappings = [
         {
           containerPort = 80
-          hostPort      = 80
         }
       ]
     }
   ])
 }
 
-# Task Definition for Backend
+# Backend Task Definition
 resource "aws_ecs_task_definition" "backend_task" {
-  family                   = "java-backend-task"
+  family                   = var.backend_task_family
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = "512"
-  memory                   = "1024"
+  cpu                      = var.backend_cpu
+  memory                   = var.backend_memory
 
   container_definitions = jsonencode([
     {
       name      = "java-backend"
-      image     = "<aws_account_id>.dkr.ecr.us-east-1.amazonaws.com/java-app:latest"
+      image     = "${aws_ecr_repository.backend_repo.repository_url}:latest"
       essential = true
       portMappings = [
         {
           containerPort = 8080
-          hostPort      = 8080
         }
       ]
     }
   ])
 }
 
-# ECS Service for Frontend
+# Frontend ECS Service
 resource "aws_ecs_service" "frontend_service" {
-  name            = "angular-frontend-service"
+  name            = "frontend-service"
   cluster         = aws_ecs_cluster.ecs_cluster.id
   task_definition = aws_ecs_task_definition.frontend_task.arn
   launch_type     = "FARGATE"
@@ -119,9 +120,9 @@ resource "aws_ecs_service" "frontend_service" {
   }
 }
 
-# ECS Service for Backend
+# Backend ECS Service
 resource "aws_ecs_service" "backend_service" {
-  name            = "java-backend-service"
+  name            = "backend-service"
   cluster         = aws_ecs_cluster.ecs_cluster.id
   task_definition = aws_ecs_task_definition.backend_task.arn
   launch_type     = "FARGATE"
@@ -131,3 +132,4 @@ resource "aws_ecs_service" "backend_service" {
     security_groups = [aws_security_group.ecs_sg.id]
   }
 }
+
