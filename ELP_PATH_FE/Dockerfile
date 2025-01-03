@@ -1,5 +1,5 @@
 
-FROM node:18 AS build
+FROM node:17 AS build
 
 RUN npm install --force
 RUN npm uninstall -g @angular/cli@17
