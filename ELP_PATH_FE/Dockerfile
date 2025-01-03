@@ -1,6 +1,8 @@
 
 FROM node:18 AS build
 
+RUN npm install --force
+RUN npm uninstall -g @angular/cli@17
 
 #RUN apt-get update && apt-get install -y npm
 
@@ -9,7 +11,7 @@ WORKDIR /app
 COPY package*.json ./
 #RUN npm install -g npm@11.0.0
 #RUN npm install --legacy-peer-deps
-RUN npm install --force
+
 RUN npm install -g @angular/cli@17
 
 
