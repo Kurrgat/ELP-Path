@@ -1,15 +1,27 @@
-# Use Node.js for building the Angular app
-FROM node:18 as build
+
+FROM node:18 AS build
 
 WORKDIR /app
+
 COPY package*.json ./
-RUN npm install
+
 RUN npm install --legacy-peer-deps
+
+# Copy the rest of the application source code
 COPY . .
+
+# Build the Angular application
 RUN npm run build --prod
 
-# Use Nginx for serving the Angular app
-FROM nginx:1.25
+# Use the official Nginx image for serving the application
+FROM nginx:alpine
+
+# Copy the built Angular application from the build stage to Nginx's default directory
 COPY --from=build /app/dist/your-angular-app /usr/share/nginx/html
+
+# Expose port 80 to be accessible outside the container
 EXPOSE 80
+
+# Start Nginx to serve the application
 CMD ["nginx", "-g", "daemon off;"]
+
