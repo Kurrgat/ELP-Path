@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y npm
 WORKDIR /app
 
 COPY package*.json ./
+RUN npm install -g @angular/cli@17
 
 RUN npm install --legacy-peer-deps
 
