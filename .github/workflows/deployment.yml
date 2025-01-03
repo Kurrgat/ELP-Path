@@ -1,0 +1,49 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_REGION: us-east-1
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up AWS Credentials
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # Log in to Amazon ECR
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v1
+
+      # Build and Push Frontend Docker Image to ECR
+      - name: Build and Push Frontend
+        run: |
+          docker build -t angular-app ./ELP_PATH_FE
+          docker tag angular-app:latest ${{ secrets.FRONTEND_REPO_URI }}:latest
+          docker push ${{ secrets.FRONTEND_REPO_URI }}:latest
+
+      # Build and Push Backend Docker Image to ECR
+      - name: Build and Push Backend
+        run: |
+          docker build -t java-app ./ELP_PATH_BE
+          docker tag java-app:latest ${{ secrets.BACKEND_REPO_URI }}:latest
+          docker push ${{ secrets.BACKEND_REPO_URI }}:latest
+
+      # Deploy ECS Service Update (Optional)
+      - name: Update ECS Service with New Images
+        run: |
+          aws ecs update-service --cluster my-cluster --service frontend-service --force-new-deployment
+
