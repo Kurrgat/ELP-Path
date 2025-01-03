@@ -7,8 +7,9 @@ FROM node:18 AS build
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install -g npm@11.0.0
-RUN npm install --legacy-peer-deps
+#RUN npm install -g npm@11.0.0
+#RUN npm install --legacy-peer-deps
+RUN npm install --force
 RUN npm install -g @angular/cli@17
 
 
