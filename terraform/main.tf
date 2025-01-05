@@ -1,135 +1,86 @@
 provider "aws" {
-  region = var.aws_region
+  region = "us-west-2"
 }
 
-# VPC and Networking
-module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "3.19.0"
-
-  name             = "ecs-vpc"
-  cidr             = var.vpc_cidr
-  azs              = ["${var.aws_region}a", "${var.aws_region}b"]
-  public_subnets   = var.public_subnets
-  private_subnets  = var.private_subnets
-  enable_nat_gateway = true
+# Define the ECR repository for frontend
+resource "aws_ecr_repository" "frontend" {
+  name = "frontend-repo"
 }
 
-# Security Group
-resource "aws_security_group" "ecs_sg" {
-  name_prefix = "ecs-sg"
-  vpc_id      = module.vpc.vpc_id
-
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 8080
-    to_port     = 8080
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+# Define the ECR repository for backend
+resource "aws_ecr_repository" "backend" {
+  name = "backend-repo"
 }
 
-# ECS Cluster
+# Define the ECS Cluster
 resource "aws_ecs_cluster" "ecs_cluster" {
-  name = var.ecs_cluster_name
+  name = "my-cluster"
 }
 
-# ECR Repositories
-resource "aws_ecr_repository" "frontend_repo" {
-  name = var.frontend_repo_name
-}
+# Define the ECS Task Definition for frontend
+resource "aws_ecs_task_definition" "frontend_task_definition" {
+  family                   = "frontend-task"
+  container_definitions    = jsonencode([{
+    name      = "frontend"
+    image     = aws_ecr_repository.frontend.repository_url
+    cpu       = 256
+    memory    = 512
+    essential = true
+  }])
+  cpu =256
+  memory =512
 
-resource "aws_ecr_repository" "backend_repo" {
-  name = var.backend_repo_name
-}
-
-# Frontend Task Definition
-resource "aws_ecs_task_definition" "frontend_task" {
-  family                   = var.frontend_task_family
-  network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = var.frontend_cpu
-  memory                   = var.frontend_memory
-
-  container_definitions = jsonencode([
-    {
-      name      = "angular-frontend"
-      image     = "${aws_ecr_repository.frontend_repo.repository_url}:latest"
-      essential = true
-      portMappings = [
-        {
-          containerPort = 80
-        }
-      ]
-    }
-  ])
-}
-
-# Backend Task Definition
-resource "aws_ecs_task_definition" "backend_task" {
-  family                   = var.backend_task_family
   network_mode             = "awsvpc"
-  requires_compatibilities = ["FARGATE"]
-  cpu                      = var.backend_cpu
-  memory                   = var.backend_memory
-
-  container_definitions = jsonencode([
-    {
-      name      = "java-backend"
-      image     = "${aws_ecr_repository.backend_repo.repository_url}:latest"
-      essential = true
-      portMappings = [
-        {
-          containerPort = 8080
-        }
-      ]
-    }
-  ])
+  execution_role_arn       = aws_iam_role.execution_role.arn
+  task_role_arn            = aws_iam_role.task_role.arn
 }
 
-# Frontend ECS Service
+# Define the ECS Service for frontend
 resource "aws_ecs_service" "frontend_service" {
   name            = "frontend-service"
   cluster         = aws_ecs_cluster.ecs_cluster.id
-  task_definition = aws_ecs_task_definition.frontend_task.arn
+  task_definition = aws_ecs_task_definition.frontend_task_definition.arn
+  desired_count   = 1
   launch_type     = "FARGATE"
 
-  network_configuration {
-    subnets         = module.vpc.public_subnets
-    security_groups = [aws_security_group.ecs_sg.id]
-  }
+#Network configuration for fargate
+network_configuration {
+  subnets  =["subnet-040901a45b97241eb", "subnet-0ef4c157450f6db33"]
+  security_groups=["sg-068176616a0407c15"]
+  assign_public_ip = true
+ }
 }
 
-# Backend ECS Service
-resource "aws_ecs_service" "backend_service" {
-  name            = "backend-service"
-  cluster         = aws_ecs_cluster.ecs_cluster.id
-  task_definition = aws_ecs_task_definition.backend_task.arn
-  launch_type     = "FARGATE"
-
-  network_configuration {
-    subnets         = module.vpc.public_subnets
-    security_groups = [aws_security_group.ecs_sg.id]
-  }
+# Define IAM roles for execution and task roles (simplified for this example)
+resource "aws_iam_role" "execution_role" {
+  name = "ecs-execution-role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action    = "sts:AssumeRole"
+      Principal = {
+        Service = "ecs-tasks.amazonaws.com"
+      }
+      Effect    = "Allow"
+      Sid       = ""
+    }]
+  })
 }
+
+resource "aws_iam_role" "task_role" {
+  name = "ecs-task-role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action    = "sts:AssumeRole"
+      Principal = {
+        Service = "ecs-tasks.amazonaws.com"
+      }
+      Effect    = "Allow"
+      Sid       = ""
+    }]
+  })
+}
+
 
