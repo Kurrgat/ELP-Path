@@ -20,10 +20,10 @@ RUN npm install -g @angular/cli@17
 # Copy the rest of the application source code
 COPY . .
 RUN ng version
-RUN ng serve
+#RUN ng serve
 
 # Build the Angular application
-RUN npm run build --prod
+RUN ng build
 
 # Use the official Nginx image for serving the application
 FROM nginx:alpine
