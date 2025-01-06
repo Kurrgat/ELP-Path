@@ -11,7 +11,8 @@ COPY package*.json ./
 #RUN npm install -g npm@11.0.0
 
 RUN npm config set legacy-peer-deps true
-
+RUN npm install
+RUN npm uninstall -g @angular/cli@17
 RUN npm install -g @angular/cli@17
 
 
