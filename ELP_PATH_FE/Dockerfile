@@ -9,7 +9,7 @@ WORKDIR /app
 
 COPY package*.json ./
 #RUN npm install -g npm@11.0.0
-RUN npm install --save-dev
+
 RUN npm config set legacy-peer-deps true
 
 RUN npm install -g @angular/cli@17
