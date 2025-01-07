@@ -22,7 +22,7 @@ FROM nginx:alpine
 
 # Copy the built Angular application from the build stage to Nginx's default directory
 # Adjusted path to match the output directory created by Angular
-COPY --from=build ./dist/elp_app_angular /usr/share/nginx/html
+COPY --from=build ./app/dist/elp_app_angular /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
