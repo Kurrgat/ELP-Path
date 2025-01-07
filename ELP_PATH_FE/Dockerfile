@@ -1,39 +1,34 @@
-
+# Stage 1: Build Angular app
 FROM node:18 AS build
-
-
-
-#RUN apt-get update && apt-get install -y npm
 
 WORKDIR /app
 
+# Install dependencies
 COPY package*.json ./
-#RUN npm install -g npm@11.0.0
-
 RUN npm config set legacy-peer-deps true
 RUN npm install
-RUN npm uninstall -g @angular/cli@17
+
+# Uninstall global Angular CLI version (if any) and install specific version
+RUN npm uninstall -g @angular/cli
 RUN npm install -g @angular/cli@17
 
-
-
-# Copy the rest of the application source code
+# Copy application source code
 COPY . .
-RUN ng version
-#RUN ng serve
 
-# Build the Angular application
-RUN ng build
+# Build the Angular application (default output will be in dist/{project_name})
+RUN ng build --prod
 
-# Use the official Nginx image for serving the application
+# Stage 2: Use Nginx to serve the app
 FROM nginx:alpine
 
 # Copy the built Angular application from the build stage to Nginx's default directory
-COPY --from=build dist/elp_app_angular /usr/share/nginx/html
+# Adjusted path to match the output directory created by Angular
+COPY --from=build /app/dist/elp_app_angular /usr/share/nginx/html
 
-# Expose port 80 to be accessible outside the container
+# Expose port 80
 EXPOSE 80
 
 # Start Nginx to serve the application
 CMD ["nginx", "-g", "daemon off;"]
+
 
