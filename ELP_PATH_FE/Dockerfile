@@ -29,7 +29,7 @@ RUN ng build
 FROM nginx:alpine
 
 # Copy the built Angular application from the build stage to Nginx's default directory
-COPY --from=build ELP_PATH_FE/dist/elp_app_angular /usr/share/nginx/html
+COPY --from=build dist/elp_app_angular /usr/share/nginx/html
 
 # Expose port 80 to be accessible outside the container
 EXPOSE 80
