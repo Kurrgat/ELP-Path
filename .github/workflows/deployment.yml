@@ -1,57 +1,59 @@
-name: Deploy to Amazon ECS
+name: Deploy to AWS
 
 on:
   push:
-    branches: [ "main" ]
-
-env:
-  AWS_REGION: us-west-2
-  FRONTEND_REPO_URI: ${{ secrets.FRONTEND_REPO_URI }}
-  BACKEND_REPO_URI: ${{ secrets.BACKEND_REPO_URI }}
+    branches:
+      - main  # Set your preferred branch for deployment (e.g., main or master)
 
 jobs:
   deploy:
-    name: Deploy
     runs-on: ubuntu-latest
-    environment: aws-actions
-    
+
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+    # Step 1: Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      # Set up AWS Credentials
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+    # Step 2: Set up AWS CLI
+    - name: Set up AWS CLI
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2  # Set your AWS region
 
-      # Login to Amazon ECR
-      - name: Login to Amazon ECR
-        uses: aws-actions/amazon-ecr-login@v1
+    # Step 3: Install MySQL Client
+    - name: Install MySQL Client
+      run: sudo apt-get install mysql-client -y  # Install MySQL client for running queries
 
-      # Build and Push Frontend Docker Image to ECR
-      - name: Build and Push Frontend
-        run: |
-          docker build -t frontend-app .
-          docker tag frontend-app:latest ${{ secrets.FRONTEND_REPO_URI }}:latest
-          docker push ${{ secrets.FRONTEND_REPO_URI }}:latest
+    # Step 4: Initialize MySQL Database
+    - name: Initialize MySQL Database
+      run: |
+        echo "Waiting for the RDS MySQL instance to be available..."
+        sleep 60  # Wait for DB to initialize (adjust as necessary)
+        
+        # Assuming the RDS instance is created and accessible, we run the SQL script via RDS or Lambda
+        RDS_ENDPOINT=$(aws rds describe-db-instances --query "DBInstances[?DBInstanceIdentifier=='my-db-instance'].Endpoint.Address" --output text)
+        mysql -h $RDS_ENDPOINT -u admin -p${{ secrets.RDS_DB_PASSWORD }} mydb < ${ELP_PATH_DB}/elp_path_db_16.sql
+        echo "Database initialization complete!"
 
-      # Build and Push Backend Docker Image to ECR
-      - name: Build and Push Backend
-        run: |
-          docker build -t backend-app ./ELP_PATH_BE
-          docker tag backend-app:latest ${{ secrets.BACKEND_REPO_URI }}:latest
-          docker push ${{ secrets.BACKEND_REPO_URI }}:latest
+    # Step 5: Deploy ECS Service for Frontend
+    - name: Deploy ECS frontend service
+      run: |
+        echo "Updating ECS Frontend Service..."
+        FRONTEND_TASK_DEFINITION_ARN=$(aws ecs describe-task-definitions --query "taskDefinitionArns[?contains(@, 'frontend')]" --output text)
+        aws ecs update-service --cluster my-ecs-cluster --service frontend-service --task-definition $FRONTEND_TASK_DEFINITION_ARN
 
-      # Deploy ECS Service Update for Frontend
-      - name: Update Frontend ECS Service
-        run: |
-          aws ecs update-service --cluster my-cluster --service frontend-service --force-new-deployment
+    # Step 6: Deploy ECS Service for Backend
+    - name: Deploy ECS backend service
+      run: |
+        echo "Updating ECS Backend Service..."
+        BACKEND_TASK_DEFINITION_ARN=$(aws ecs describe-task-definitions --query "taskDefinitionArns[?contains(@, 'backend')]" --output text)
+        aws ecs update-service --cluster my-ecs-cluster --service backend-service --task-definition $BACKEND_TASK_DEFINITION_ARN
 
-      # Deploy ECS Service Update for Backend
-      - name: Update Backend ECS Service
-        run: |
-          aws ecs update-service --cluster my-cluster --service backend-service --force-new-deployment
+    # Step 7: Verify ECS services are running
+    - name: Verify ECS services
+      run: |
+        aws ecs describe-services --cluster my-ecs-cluster --services frontend-service backend-service
+
 
