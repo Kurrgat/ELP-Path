@@ -1,5 +1,3 @@
-name: Deploy to AWS
-
 on:
   push:
     branches:
@@ -35,40 +33,24 @@ jobs:
         
     #     # Assuming the RDS instance is created and accessible, we run the SQL script via RDS or Lambda
     #     RDS_ENDPOINT=$(aws rds describe-db-instances --query "DBInstances[?DBInstanceIdentifier=='terraform-20250108083208118700000001'].Endpoint.Address" --output text)
-    #     if [ -z "$RDS_ENDPOINT" ]; then
-    #       echo "RDS instance not found. Please check the DBInstanceIdentifier."
-    #       exit 1
-    #     fi
-    #     echo "Running SQL script on RDS instance at $RDS_ENDPOINT..."
-        
-    #     # Run SQL script (Ensure path is correct)
     #     mysql -h $RDS_ENDPOINT -u root -p${{ secrets.RDS_DB_PASSWORD }} mydb < ./ELP_PATH_DB/elp_path_db_16.sql
-        
     #     echo "Database initialization complete!"
 
-    # Step 5: Deploy ECS Service for Frontend
+   # Step 5: Deploy ECS Service for Frontend
     - name: Deploy ECS frontend service
       run: |
         echo "Updating ECS Frontend Service..."
         FRONTEND_TASK_DEFINITION_ARN=$(aws ecs describe-task-definition --task-definition frontend-task-definition --query "taskDefinition.taskDefinitionArn" --output text)
-        if [ -z "$FRONTEND_TASK_DEFINITION_ARN" ]; then
-          echo "Frontend task definition not found."
-          exit 1
-        fi
         aws ecs update-service --cluster my-ecs-cluster --service frontend-service --task-definition $FRONTEND_TASK_DEFINITION_ARN
 
-    # Step 6: Deploy ECS Service for Backend
+# Step 6: Deploy ECS Service for Backend
     - name: Deploy ECS backend service
       run: |
         echo "Updating ECS Backend Service..."
         BACKEND_TASK_DEFINITION_ARN=$(aws ecs describe-task-definition --task-definition backend-task-definition --query "taskDefinition.taskDefinitionArn" --output text)
-        if [ -z "$BACKEND_TASK_DEFINITION_ARN" ]; then
-          echo "Backend task definition not found."
-          exit 1
-        fi
         aws ecs update-service --cluster my-ecs-cluster --service backend-service --task-definition $BACKEND_TASK_DEFINITION_ARN
 
     # Step 7: Verify ECS services are running
     - name: Verify ECS services
       run: |
-        aws ecs describe-services --cluster my-ecs-cluster --services frontend-service backend-service
+        aws ecs describe-services --cluster my-ecs-cluster --services frontend-service backend-service"
