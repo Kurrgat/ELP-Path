@@ -28,23 +28,23 @@ jobs:
       run: sudo apt-get install mysql-client -y  # Install MySQL client for running queries
 
     # Step 4: Initialize MySQL Database
-    - name: Initialize MySQL Database
-      run: |
-        echo "Waiting for the RDS MySQL instance to be available..."
-        sleep 60  # Wait for DB to initialize (adjust as necessary)
+    # - name: Initialize MySQL Database
+    #   run: |
+    #     echo "Waiting for the RDS MySQL instance to be available..."
+    #     sleep 60  # Wait for DB to initialize (adjust as necessary)
         
-        # Assuming the RDS instance is created and accessible, we run the SQL script via RDS or Lambda
-        RDS_ENDPOINT=$(aws rds describe-db-instances --query "DBInstances[?DBInstanceIdentifier=='terraform-20250108083208118700000001'].Endpoint.Address" --output text)
-        if [ -z "$RDS_ENDPOINT" ]; then
-          echo "RDS instance not found. Please check the DBInstanceIdentifier."
-          exit 1
-        fi
-        echo "Running SQL script on RDS instance at $RDS_ENDPOINT..."
+    #     # Assuming the RDS instance is created and accessible, we run the SQL script via RDS or Lambda
+    #     RDS_ENDPOINT=$(aws rds describe-db-instances --query "DBInstances[?DBInstanceIdentifier=='terraform-20250108083208118700000001'].Endpoint.Address" --output text)
+    #     if [ -z "$RDS_ENDPOINT" ]; then
+    #       echo "RDS instance not found. Please check the DBInstanceIdentifier."
+    #       exit 1
+    #     fi
+    #     echo "Running SQL script on RDS instance at $RDS_ENDPOINT..."
         
-        # Run SQL script (Ensure path is correct)
-        mysql -h $RDS_ENDPOINT -u root -p${{ secrets.RDS_DB_PASSWORD }} mydb < ./ELP_PATH_DB/elp_path_db_16.sql
+    #     # Run SQL script (Ensure path is correct)
+    #     mysql -h $RDS_ENDPOINT -u root -p${{ secrets.RDS_DB_PASSWORD }} mydb < ./ELP_PATH_DB/elp_path_db_16.sql
         
-        echo "Database initialization complete!"
+    #     echo "Database initialization complete!"
 
     # Step 5: Deploy ECS Service for Frontend
     - name: Deploy ECS frontend service
