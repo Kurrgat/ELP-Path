@@ -35,6 +35,9 @@ jobs:
     #     RDS_ENDPOINT=$(aws rds describe-db-instances --query "DBInstances[?DBInstanceIdentifier=='terraform-20250108083208118700000001'].Endpoint.Address" --output text)
     #     mysql -h $RDS_ENDPOINT -u root -p${{ secrets.RDS_DB_PASSWORD }} mydb < ./ELP_PATH_DB/elp_path_db_16.sql
     #     echo "Database initialization complete!"
+     # Login to Amazon ECR
+    - name: Login to Amazon ECR
+      uses: aws-actions/amazon-ecr-login@v1
 
     # Step 5: Build and Push Frontend Docker image to ECR
     - name: Build and Push Frontend Docker image
