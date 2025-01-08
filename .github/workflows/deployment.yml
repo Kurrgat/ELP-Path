@@ -39,7 +39,7 @@ jobs:
     # Step 5: Build and Push Frontend Docker image to ECR
     - name: Build and Push Frontend Docker image
       run: |
-        docker build -t angular-app ./frontend  # Adjust path if needed
+        docker build -t angular-app ./ELP_PATH_FE  # Adjust path if needed
         docker tag angular-app:latest ${{ secrets.FRONTEND_REPO_URI }}:latest
         docker push ${{ secrets.FRONTEND_REPO_URI }}:latest
 
