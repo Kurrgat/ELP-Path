@@ -43,16 +43,16 @@ jobs:
       run: |
         echo "Updating ECS Frontend Service..."
         FRONTEND_TASK_DEFINITION_ARN=${{ secrets.FRONTEND_TASK_DEFINITION_ARN }}
-        aws ecs update-service --cluster my-ecs-cluster --service frontend-service --task-definition $FRONTEND_TASK_DEFINITION_ARN
+        aws ecs update-service --cluster my-cluster --service frontend-service --task-definition $FRONTEND_TASK_DEFINITION_ARN
 
     # Step 6: Deploy ECS Service for Backend
     - name: Deploy ECS backend service
       run: |
         echo "Updating ECS Backend Service..."
         BACKEND_TASK_DEFINITION_ARN=${{ secrets.BACKEND_TASK_DEFINITION_ARN }}
-        aws ecs update-service --cluster my-ecs-cluster --service backend-service --task-definition $BACKEND_TASK_DEFINITION_ARN
+        aws ecs update-service --cluster my-cluster --service backend-service --task-definition $BACKEND_TASK_DEFINITION_ARN
 
     # Step 7: Verify ECS services are running
     - name: Verify ECS services
       run: |
-        aws ecs describe-services --cluster my-ecs-cluster --services frontend-service backend-service
+        aws ecs describe-services --cluster my-cluster --services frontend-service backend-service
