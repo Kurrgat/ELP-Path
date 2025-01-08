@@ -34,8 +34,8 @@ jobs:
         sleep 60  # Wait for DB to initialize (adjust as necessary)
         
         # Assuming the RDS instance is created and accessible, we run the SQL script via RDS or Lambda
-        RDS_ENDPOINT=$(aws rds describe-db-instances --query "DBInstances[?DBInstanceIdentifier=='my-db-instance'].Endpoint.Address" --output text)
-        mysql -h $RDS_ENDPOINT -u admin -p${{ secrets.RDS_DB_PASSWORD }} mydb < ./ELP_PATH_DB/elp_path_db_16.sql
+        RDS_ENDPOINT=$(aws rds describe-db-instances --query "DBInstances[?DBInstanceIdentifier=='terraform-20250108083208118700000001'].Endpoint.Address" --output text)
+        mysql -h $RDS_ENDPOINT -u root -p${{ secrets.RDS_DB_PASSWORD }} mydb < ./ELP_PATH_DB/elp_path_db_16.sql
         echo "Database initialization complete!"
 
     # Step 5: Deploy ECS Service for Frontend
