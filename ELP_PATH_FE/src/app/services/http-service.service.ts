@@ -3,34 +3,46 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular
 import { Observable, catchError, tap, throwError } from 'rxjs';
 import { Scholars } from '../interfaces/scholars';
 
+// import { unis } from 'src/assets/json_files/schools';
+
 @Injectable({
   providedIn: 'root',
 })
 export class HttpServiceService {
-  // Update this to the ALB DNS name after deployment
-  serverUrl: string = 'http://frontend-load-balancer-569218175.us-west-2.elb.amazonaws.com/api/';  // Replace with your ALB DNS name
-  Url: string = `${this.serverUrl}profile/get-user-data`;
- 
-  // Other URLs
+  getAllAdmins: any;
+  put: any;
+  getHubEvents: any;
+  joinHub: any;
+  gethubfeeds: any;
+  
+
+  
+  constructor(private http: HttpClient) {}
+  // serverUrl: string = 'http://localhost:8080/';
+  // serverUrl: string = 'http://192.168.0.48:8080/';
+
+  // serverUrl: string = 'http://192.168.43.106:8080/';
+    //serverUrl: string = 'http://192.168.2.9:8080/';
+    //serverUrl: string = 'http://192.168.89.11:8080/';
+  //  serverUrl: string = 'http://192.168.0.39:8080/';
+   serverUrl: string = 'http://frontend-load-balancer-569218175.us-west-2.elb.amazonaws.com/api/';
+  // serverUrl: string = 'http://192.168.0.77:8080/';
+    //  serverUrl: string = 'http://192.168.89.205:8080/';
+   Url: string = `${this.serverUrl}profile/get-user-data`;
+   //serverUrl: string = 'http://3.145.143.209:5555/'
+  
+     
+  // serverUrl2: string = 'http://192.168.0.64:8080/';
+  // serverUrl: string = 'http://192.168.0.69:8080/';
+  // serverUrl: string = 'http://192.168.0.81:8080/';
+ // Url: string ='http://http://172.30.1.215:8080/profile/get-user-data';
+  // Url: string ='http://localhost:8080/profile/get-user-data';
   dataUrl: string = '/assets/json_files/regions.json';
   instUrl: string = '/assets/json_files/institutions.json';
 
-  constructor(private http: HttpClient) {}
-    // PUT request method
-  put(endpoint: string, data: any): Observable<any> {
-    const url = `${this.serverUrl}${endpoint}`;  // Combine server URL with the endpoint passed to the method
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');  // Add headers if needed
-    return this.http.put(url, data, { headers }).pipe(
-      tap(response => {
-        // Handle response if necessary
-        console.log('Response from PUT request:', response);
-      }),
-      catchError(this.handleError) // Handling errors
-    );
-  }
+  // serverUrl: string = 'http://192.168.0.87:8080/';
 
- 
-
+  // serverUrl: string = 'http://192.168.100.232:8080/';
   getData(url: string): Observable<any> {
     const res = this.http
       .get(url, {
@@ -48,29 +60,17 @@ export class HttpServiceService {
     console.log(res);
     return res;
   }
-
   fetchUserDataById(id: number): Observable<any> {
     const url = `${this.serverUrl}scholars/display-scholars/${id}`;
-    console.log(url);
+    console.log(url)
     return this.http.get(url).pipe(
       catchError(this.handleError) // Handle errors
     );
   }
-
   private handleError(error: any) {
     console.error('An error occurred:', error.error.message);
     return throwError(() => new Error(error.error.message));
   }
-
-  // Other service methods...
-
-  // Example method to get user data
-  // getUsers(userId: number): Observable<any> {
-  //   const urlWithUserId = `${this.serverUrl}users/${userId}`;
-  //   return this.http.get<any[]>(urlWithUserId);
-  }
-
-  // Add other methods as needed...
 
   getDataF(url: string, filters: any): Observable<any> {
     let params = new HttpParams();
