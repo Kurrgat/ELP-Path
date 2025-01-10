@@ -29,11 +29,11 @@ jobs:
 
 
     - name: Run SQL script on RDS
-      env:
-          RDS_ENDPOINT: ${{ secrets.DB_HOST }}  # RDS endpoint
-          DB_USER: ${{ secrets.DB_USER }}  # Database username
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}  # Database password
-          DB_NAME: ${{ secrets.DB_NAME }}  # Database name
+      # env:
+      #     RDS_ENDPOINT: ${{ secrets.DB_HOST }}  # RDS endpoint
+      #     DB_USER: ${{ secrets.DB_USER }}  # Database username
+      #     DB_PASSWORD: ${{ secrets.DB_PASSWORD }}  # Database password
+      #     DB_NAME: ${{ secrets.DB_NAME }}  # Database name
       run: |
           echo "Running SQL script..."
           mysql -h $RDS_ENDPOINT -u $DB_USER -p$DB_PASSWORD $DB_NAME < ./ELP_PATH_DB/elp_path_db_16.sql
