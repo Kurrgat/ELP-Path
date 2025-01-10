@@ -10,12 +10,26 @@ export class HttpServiceService {
   // Update this to the ALB DNS name after deployment
   serverUrl: string = 'http://frontend-load-balancer-569218175.us-west-2.elb.amazonaws.com/api/';  // Replace with your ALB DNS name
   Url: string = `${this.serverUrl}profile/get-user-data`;
-
+ 
   // Other URLs
   dataUrl: string = '/assets/json_files/regions.json';
   instUrl: string = '/assets/json_files/institutions.json';
 
   constructor(private http: HttpClient) {}
+    // PUT request method
+  put(endpoint: string, data: any): Observable<any> {
+    const url = `${this.serverUrl}${endpoint}`;  // Combine server URL with the endpoint passed to the method
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');  // Add headers if needed
+    return this.http.put(url, data, { headers }).pipe(
+      tap(response => {
+        // Handle response if necessary
+        console.log('Response from PUT request:', response);
+      }),
+      catchError(this.handleError) // Handling errors
+    );
+  }
+
+ 
 
   getData(url: string): Observable<any> {
     const res = this.http
@@ -51,9 +65,9 @@ export class HttpServiceService {
   // Other service methods...
 
   // Example method to get user data
-  getUsers(userId: number): Observable<any> {
-    const urlWithUserId = `${this.serverUrl}users/${userId}`;
-    return this.http.get<any[]>(urlWithUserId);
+  // getUsers(userId: number): Observable<any> {
+  //   const urlWithUserId = `${this.serverUrl}users/${userId}`;
+  //   return this.http.get<any[]>(urlWithUserId);
   }
 
   // Add other methods as needed...
