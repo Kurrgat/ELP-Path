@@ -36,7 +36,7 @@ jobs:
       #     DB_NAME: ${{ secrets.DB_NAME }}  # Database name
       run: |
           echo "Running SQL script..."
-          mysql -h $RDS_ENDPOINT -u $DB_USER -p$DB_PASSWORD $DB_NAME < ./ELP_PATH_DB/elp_path_db_16.sql
+          mysql -h $RDS_ENDPOINT -u${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} ${{ secrets.DB_NAME }} < ./ELP_PATH_DB/elp_path_db_16.sql
 
 
     # # Step 4: Initialize MySQL Database (optional)
