@@ -8,7 +8,7 @@ import { Scholars } from '../interfaces/scholars';
 })
 export class HttpServiceService {
   // Update this to the ALB DNS name after deployment
-  serverUrl: string = 'http://<frontend_lb_dns_name>/api/';  // Replace with your ALB DNS name
+  serverUrl: string = 'http://frontend-load-balancer-569218175.us-west-2.elb.amazonaws.com/api/';  // Replace with your ALB DNS name
   Url: string = `${this.serverUrl}profile/get-user-data`;
 
   // Other URLs
