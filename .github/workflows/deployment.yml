@@ -27,14 +27,26 @@ jobs:
     - name: Install MySQL Client
       run: sudo apt-get install mysql-client -y  # Install MySQL client for running queries
 
-    # # Step 4: Initialize MySQL Database (optional)
-    - name: Initialize MySQL Database
+
+    - name: Run SQL script on RDS
+      env:
+          RDS_ENDPOINT: ${{ secrets.DB_HOST }}  # RDS endpoint
+          DB_USER: ${{ secrets.DB_USER }}  # Database username
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}  # Database password
+          DB_NAME: ${{ secrets.DB_NAME }}  # Database name
       run: |
-        echo "Waiting for the RDS MySQL instance to be available..."
-        sleep 60  # Wait for DB to initialize (adjust as necessary)
-        RDS_ENDPOINT=$(aws rds describe-db-instances --query "DBInstances[?DBInstanceIdentifier=='terraform-20250109183938978300000001'].Endpoint.Address" --output text)
-        mysql -h $RDS_ENDPOINT -u root -p${{ secrets.RDS_DB_PASSWORD }} mydb < ./ELP_PATH_DB/elp_path_db_16.sql
-        echo "Database initialization complete!"
+          echo "Running SQL script..."
+          mysql -h $RDS_ENDPOINT -u $DB_USER -p$DB_PASSWORD $DB_NAME < ./ELP_PATH_DB/elp_path_db_16.sql
+
+
+    # # Step 4: Initialize MySQL Database (optional)
+    # - name: Initialize MySQL Database
+    #   run: |
+    #     echo "Waiting for the RDS MySQL instance to be available..."
+    #     sleep 60  # Wait for DB to initialize (adjust as necessary)
+    #     RDS_ENDPOINT=$(aws rds describe-db-instances --query "DBInstances[?DBInstanceIdentifier=='terraform-20250109183938978300000001'].Endpoint.Address" --output text)
+    #     mysql -h $RDS_ENDPOINT -u root -p${{ secrets.RDS_DB_PASSWORD }} mydb < ./ELP_PATH_DB/elp_path_db_16.sql
+    #     echo "Database initialization complete!"
      # Login to Amazon ECR
     - name: Login to Amazon ECR
       uses: aws-actions/amazon-ecr-login@v1
@@ -58,16 +70,18 @@ jobs:
       run: |
         echo "Updating ECS Frontend Service..."
         FRONTEND_TASK_DEFINITION_ARN=${{ secrets.FRONTEND_TASK_DEFINITION_ARN }}
-        aws ecs update-service --cluster my-cluster --service frontend-service --task-definition $FRONTEND_TASK_DEFINITION_ARN
+        aws ecs update-service --cluster frontend-cluster --service frontend-service --task-definition $FRONTEND_TASK_DEFINITION_ARN
 
     # Step 8: Deploy ECS Service for Backend
     - name: Deploy ECS backend service
       run: |
         echo "Updating ECS Backend Service..."
         BACKEND_TASK_DEFINITION_ARN=${{ secrets.BACKEND_TASK_DEFINITION_ARN }}
-        aws ecs update-service --cluster my-cluster --service backend-service --task-definition $BACKEND_TASK_DEFINITION_ARN
+        aws ecs update-service --cluster backend-cluster --service backend-service --task-definition $BACKEND_TASK_DEFINITION_ARN
 
     # Step 9: Verify ECS services are running
     - name: Verify ECS services
       run: |
-        aws ecs describe-services --cluster my-cluster --services frontend-service backend-service
+        aws ecs describe-services --cluster frontend-cluster --services frontend-service
+        aws ecs describe-services --cluster backend-cluster --services backend-service
+
