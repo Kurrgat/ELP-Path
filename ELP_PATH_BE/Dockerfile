@@ -21,7 +21,7 @@ WORKDIR /app
 COPY --from=build /ELP_PATH_BE/target/*.jar app.jar
 
 # Expose the port your Spring Boot application will run on
-EXPOSE 8080
+EXPOSE 3000
 
 # Define the command to run your Spring Boot application
 ENTRYPOINT ["java", "-jar", "app.jar"]
