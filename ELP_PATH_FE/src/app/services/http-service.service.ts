@@ -3,46 +3,20 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular
 import { Observable, catchError, tap, throwError } from 'rxjs';
 import { Scholars } from '../interfaces/scholars';
 
-// import { unis } from 'src/assets/json_files/schools';
-
 @Injectable({
   providedIn: 'root',
 })
 export class HttpServiceService {
-  getAllAdmins: any;
-  put: any;
-  getHubEvents: any;
-  joinHub: any;
-  gethubfeeds: any;
-  
+  // Update this to the ALB DNS name after deployment
+  serverUrl: string = 'http://<frontend_lb_dns_name>/api/';  // Replace with your ALB DNS name
+  Url: string = `${this.serverUrl}profile/get-user-data`;
 
-  
-  constructor(private http: HttpClient) {}
-  // serverUrl: string = 'http://localhost:8080/';
-  // serverUrl: string = 'http://192.168.0.48:8080/';
-
-  // serverUrl: string = 'http://192.168.43.106:8080/';
-    //serverUrl: string = 'http://192.168.2.9:8080/';
-    //serverUrl: string = 'http://192.168.89.11:8080/';
-  //  serverUrl: string = 'http://192.168.0.39:8080/';
-   serverUrl: string = 'http://0.0.0.0:8080/';
-  // serverUrl: string = 'http://192.168.0.77:8080/';
-    //  serverUrl: string = 'http://192.168.89.205:8080/';
-   Url: string ='http://http://0.0.0.0:8080/profile/get-user-data';
-   //serverUrl: string = 'http://3.145.143.209:5555/'
-  
-     
-  // serverUrl2: string = 'http://192.168.0.64:8080/';
-  // serverUrl: string = 'http://192.168.0.69:8080/';
-  // serverUrl: string = 'http://192.168.0.81:8080/';
- // Url: string ='http://http://172.30.1.215:8080/profile/get-user-data';
-  // Url: string ='http://localhost:8080/profile/get-user-data';
+  // Other URLs
   dataUrl: string = '/assets/json_files/regions.json';
   instUrl: string = '/assets/json_files/institutions.json';
 
-  // serverUrl: string = 'http://192.168.0.87:8080/';
+  constructor(private http: HttpClient) {}
 
-  // serverUrl: string = 'http://192.168.100.232:8080/';
   getData(url: string): Observable<any> {
     const res = this.http
       .get(url, {
@@ -60,17 +34,29 @@ export class HttpServiceService {
     console.log(res);
     return res;
   }
+
   fetchUserDataById(id: number): Observable<any> {
     const url = `${this.serverUrl}scholars/display-scholars/${id}`;
-    console.log(url)
+    console.log(url);
     return this.http.get(url).pipe(
       catchError(this.handleError) // Handle errors
     );
   }
+
   private handleError(error: any) {
     console.error('An error occurred:', error.error.message);
     return throwError(() => new Error(error.error.message));
   }
+
+  // Other service methods...
+
+  // Example method to get user data
+  getUsers(userId: number): Observable<any> {
+    const urlWithUserId = `${this.serverUrl}users/${userId}`;
+    return this.http.get<any[]>(urlWithUserId);
+  }
+
+  // Add other methods as needed...
 
   getDataF(url: string, filters: any): Observable<any> {
     let params = new HttpParams();
