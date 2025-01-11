@@ -1,0 +1,53 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+description = """emt-elp-path-backend"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+        
+     maven { url "https://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jdbc', version:'3.1.1'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version:'3.1.1'
+    compile group: 'org.hibernate', name: 'hibernate-core', version:'6.2.6.Final'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version:'3.1.1'
+    compile group: 'net.sf.jasperreports', name: 'jasperreports', version:'6.20.6'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'3.1.1'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version:'3.1.1'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'3.1.1'
+    compile group: 'org.modelmapper', name: 'modelmapper', version:'3.1.1'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version:'3.1.1'
+    compile group: 'org.thymeleaf', name: 'thymeleaf', version:'3.1.2.RELEASE'
+    compile group: 'com.google.api-client', name: 'google-api-client', version:'2.2.0'
+    compile group: 'io.jsonwebtoken', name: 'jjwt-api', version:'0.11.5'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'8.0.33'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version:'3.1.1'
+    compile group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version:'2.0.4'
+    compile group: 'commons-io', name: 'commons-io', version:'2.11.0'
+    compile group: 'org.springframework.security', name: 'spring-security-oauth2-core', version:'6.1.1'
+    compile group: 'org.mockito', name: 'mockito-core', version:'5.3.1'
+    compile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version:'5.9.3'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version:'5.0.0'
+    compile group: 'com.google.code.gson', name: 'gson', version:'2.10.1'
+    compile group: 'javax.persistence', name: 'javax.persistence-api', version:'2.2'
+    compile group: 'com.twilio.sdk', name: 'twilio', version:'8.28.0'
+    compile group: 'com.querydsl', name: 'querydsl-apt', version:'5.0.0'
+    compile group: 'com.querydsl', name: 'querydsl-jpa', version:'5.0.0'
+    runtime group: 'io.jsonwebtoken', name: 'jjwt-impl', version:'0.11.5'
+    runtime group: 'io.jsonwebtoken', name: 'jjwt-jackson', version:'0.11.5'
+    runtime group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version:'3.1.4'
+    testCompile group: 'org.springframework.security', name: 'spring-security-test', version:'6.1.1'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version:'1.18.28'
+}
