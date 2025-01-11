@@ -56,13 +56,13 @@ jobs:
     # - name: initializegradle
     #   working-directory: ./ELP_PATH_BE
     #   run: gradle init
-    - name: Version Gradle Wrapper
-      working-directory: ./ELP_PATH_BE
-      run:  ./gradlew --version
+    # - name: Version Gradle Wrapper
+    #   working-directory: ./ELP_PATH_BE
+    #   run:  ./gradlew --version
       
-    - name: Generate Gradle Wrapper
-      working-directory: ./ELP_PATH_BE
-      run:  gradle wrapper --gradle-version=7.4
+    # - name: Generate Gradle Wrapper
+    #   working-directory: ./ELP_PATH_BE
+    #   run:  gradle wrapper --gradle-version=7.4
 
     
     - name: Set Gradle Wrapper executable
