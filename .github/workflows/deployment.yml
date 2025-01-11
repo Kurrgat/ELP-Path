@@ -49,9 +49,11 @@ jobs:
       run: sudo apt  install gradle
       
     - name: initializegradle
+      working-directory: ./ELP_PATH_BE
       run: gradle init
       
     - name: Generate Gradle Wrapper
+      working-directory: ./ELP_PATH_BE
       run:  gradle wrapper
           
 
