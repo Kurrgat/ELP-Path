@@ -9,7 +9,6 @@ COPY src ./src
 
 # Run Maven to build the application
 RUN mvn clean package -DskipTests
-RUN ./gradlew build
 
 # Stage 2: Run the Spring Boot application with OpenJDK
 FROM openjdk:17-slim
