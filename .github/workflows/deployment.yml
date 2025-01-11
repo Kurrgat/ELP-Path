@@ -44,11 +44,15 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Generate Gradle Wrapper
+    - name: Install Gradle
       working-directory: ./ELP_PATH_BE  # Adjust to your backend project directory
       run: sudo apt  install gradle
-           gradle init
-           gradle wrapper
+      
+    - name: initializegradle
+      run: gradle init
+      
+    - name: Generate Gradle Wrapper
+      run:  gradle wrapper
           
 
     - name: Set Gradle Wrapper executable
