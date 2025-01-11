@@ -22,6 +22,21 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-west-2  # Set your AWS region
+       # Step 3: Install MySQL Client (if you need to run DB initialization, uncomment it)
+   
+    - name: Install MySQL Client
+      run: sudo apt-get install mysql-client -y  # Install MySQL client for running queries
+
+
+    - name: Run SQL script on RDS
+      # env:
+      #     RDS_ENDPOINT: ${{ secrets.DB_HOST }}  # RDS endpoint
+      #     DB_USER: ${{ secrets.DB_USER }}  # Database username
+      #     DB_PASSWORD: ${{ secrets.DB_PASSWORD }}  # Database password
+      #     DB_NAME: ${{ secrets.DB_NAME }}  # Database name
+      run: |
+          echo "Running SQL script..."
+          mysql -h $RDS_ENDPOINT -u root -p${{ secrets.DB_PASSWORD }} ${{ secrets.DB_NAME }} < ./ELP_PATH_DB/elp_path_db_16.sql
 
     # Step 3: Set up JDK (for building the backend)
     - name: Set up JDK
@@ -30,7 +45,13 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    # Step 4: Build the Backend Application
+    - name: Generate Gradle Wrapper
+      working-directory: ./ELP_PATH_BE  # Adjust to your backend project directory
+      run: gradle wrapper
+
+    - name: Set Gradle Wrapper executable
+      run: chmod +x ./ELP_PATH_BE/gradlew  # Ensure Gradle Wrapper has execute permissions
+
     - name: Build Backend with Gradle
       working-directory: ./ELP_PATH_BE  # Adjust to your backend project directory
       run: ./gradlew build --no-daemon
