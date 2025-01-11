@@ -46,13 +46,13 @@ jobs:
 
     - name: Generate Gradle Wrapper
       working-directory: ./ELP_PATH_BE  # Adjust to your backend project directory
-      run: gradle wrapper
+      run: sudo apt  install gradle
+           gradle init
+           gradle wrapper
           
 
     - name: Set Gradle Wrapper executable
-      run: sudo apt  install gradle
-           gradle init
-           chmod +x ./ELP_PATH_BE/gradlew  # Ensure Gradle Wrapper has execute permissions
+      run: chmod +x ./ELP_PATH_BE/gradlew  # Ensure Gradle Wrapper has execute permissions
 
     - name: Build Backend with Gradle
       working-directory: ./ELP_PATH_BE  # Adjust to your backend project directory
