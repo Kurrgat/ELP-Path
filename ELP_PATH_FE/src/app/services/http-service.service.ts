@@ -25,7 +25,7 @@ export class HttpServiceService {
     //serverUrl: string = 'http://192.168.2.9:8080/';
     //serverUrl: string = 'http://192.168.89.11:8080/';
   //  serverUrl: string = 'http://192.168.0.39:8080/';
-   serverUrl: string = 'http://frontend-load-balancer-569218175.us-west-2.elb.amazonaws.com/api/';
+   serverUrl: string = 'http://frontend-load-balancer-1008930370.us-west-2.elb.amazonaws.com/api/';
   // serverUrl: string = 'http://192.168.0.77:8080/';
     //  serverUrl: string = 'http://192.168.89.205:8080/';
    Url: string = `${this.serverUrl}profile/get-user-data`;
