@@ -59,9 +59,9 @@ jobs:
       
     - name: Generate Gradle Wrapper
       working-directory: ./ELP_PATH_BE
-      run:  gradle wrapper
-          
+      run:  gradle wrapper --gradle-version=7.4
 
+    
     - name: Set Gradle Wrapper executable
       run: chmod +x ./ELP_PATH_BE/gradlew  # Ensure Gradle Wrapper has execute permissions
 
