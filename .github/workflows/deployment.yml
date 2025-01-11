@@ -50,7 +50,8 @@ jobs:
           
 
     - name: Set Gradle Wrapper executable
-      run: gradle init
+      run: sudo apt  install gradle
+           gradle init
            chmod +x ./ELP_PATH_BE/gradlew  # Ensure Gradle Wrapper has execute permissions
 
     - name: Build Backend with Gradle
