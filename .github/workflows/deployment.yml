@@ -47,10 +47,11 @@ jobs:
     - name: Generate Gradle Wrapper
       working-directory: ./ELP_PATH_BE  # Adjust to your backend project directory
       run: gradle wrapper
-           gradle init
+          
 
     - name: Set Gradle Wrapper executable
-      run: chmod +x ./ELP_PATH_BE/gradlew  # Ensure Gradle Wrapper has execute permissions
+      run: gradle init
+           chmod +x ./ELP_PATH_BE/gradlew  # Ensure Gradle Wrapper has execute permissions
 
     - name: Build Backend with Gradle
       working-directory: ./ELP_PATH_BE  # Adjust to your backend project directory
