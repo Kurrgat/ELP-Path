@@ -43,6 +43,7 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '17'
+        
 
     - name: Install Gradle
       working-directory: ./ELP_PATH_BE  # Adjust to your backend project directory
@@ -52,9 +53,9 @@ jobs:
       working-directory: ./ELP_PATH_BE
       run: curl -I https://repo.maven.apache.org/maven2
 
-    - name: initializegradle
-      working-directory: ./ELP_PATH_BE
-      run: gradle init
+    # - name: initializegradle
+    #   working-directory: ./ELP_PATH_BE
+    #   run: gradle init
       
     - name: Generate Gradle Wrapper
       working-directory: ./ELP_PATH_BE
