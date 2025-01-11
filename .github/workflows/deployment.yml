@@ -47,7 +47,11 @@ jobs:
     - name: Install Gradle
       working-directory: ./ELP_PATH_BE  # Adjust to your backend project directory
       run: sudo apt  install gradle
-      
+
+    - name: Test Maven Central Access
+      working-directory: ./ELP_PATH_BE
+      run: curl -I https://repo.maven.apache.org/maven2
+
     - name: initializegradle
       working-directory: ./ELP_PATH_BE
       run: gradle init
